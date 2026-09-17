@@ -1,0 +1,17 @@
+{
+  "name": "phonebook-pipeline",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "backend",
+    "frontend",
+    "e2e-tests"
+  ],
+  "scripts": {
+    "test": "npm run test:backend && npm run test:e2e",
+    "test:backend": "npm test --workspace backend",
+    "test:e2e": "npm test --workspace e2e-tests",
+    "lint": "npm run lint --workspace frontend",
+    "build": "npm run build --workspace frontend"
+  }
+}

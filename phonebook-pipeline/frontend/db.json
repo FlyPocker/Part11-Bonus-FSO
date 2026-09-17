@@ -19,6 +19,21 @@
       "name": "Mary Poppendieck",
       "number": "39-23-6423122",
       "id": "4"
+    },
+    {
+      "name": "a",
+      "number": "a",
+      "id": "1RoMECvV7l4"
+    },
+    {
+      "name": "s",
+      "number": "s",
+      "id": "28zWjL3AUio"
+    },
+    {
+      "name": "teraz",
+      "number": "2344",
+      "id": "loTJmsSEiAo"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 import List from './components/List'
 import personServise from './services/persons'
 import Notification from './components/Notification'
@@ -66,8 +65,8 @@ const App = () => {
             setNewName('')
             setNewNumber('')
           })
-          .catch((error) => {
-            handleEventMessage(`${newName} was already removed from server`, 'error')
+          .catch(() => {
+            handleEventMessage(`${newName} was already removed from server`, 'error') // !!! blad error validation koliduje z errorem usunientego juz numeru, prawdopodobnie nalezy stworzyc rozne obslugi bledow tu
             setPersons(persons.filter((n)=>n.id !== person.id))
           })
       }
@@ -79,6 +78,9 @@ const App = () => {
           handleEventMessage(`${newName} added`, 'sucess')
           setNewName('')
           setNewNumber('')
+        })
+        .catch((error) => {
+          handleEventMessage(error.response.data.error, 'error')
         })
     }
   }
@@ -92,7 +94,7 @@ const App = () => {
         .then(() => {
           setPersons(persons.filter(person => person.id !== id))
         })
-        .catch(error => {
+        .catch(() => {
           alert(`number was already deleted`)
           setPersons(persons.filter(person => person.id !== id))
         })

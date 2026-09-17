@@ -8,10 +8,11 @@
     "e2e-tests"
   ],
   "scripts": {
+    "start": "node backend/index.js",
+    "build": "npm run build --workspace frontend",
     "test": "npm run test:backend && npm run test:e2e",
     "test:backend": "npm test --workspace backend",
     "test:e2e": "npm test --workspace e2e-tests",
-    "lint": "npm run lint --workspace frontend",
-    "build": "npm run build --workspace frontend"
+    "lint": "npm run lint --workspace frontend"
   }
 }
